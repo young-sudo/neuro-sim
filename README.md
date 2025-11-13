@@ -5,7 +5,7 @@
 Sample simulations of selected neuroinformatics models, which form the theoretical foundation for understanding biological computation and provided the initial inspiration for artificial neural networks (ANNs).
 
 ## Contents
-1. Integrate-and-Fire (IF) model
+### 1. Integrate-and-Fire (IF) model
 
 A simplified neuron model that integrates incoming signals and generates spikes once a threshold potential is reached.
 
@@ -17,7 +17,7 @@ $$
 \end{cases}
 $$
 
-2. Hodgkin-Huxley (HH) model
+### 2. Hodgkin-Huxley (HH) model
 
 A biophysical model describing how action potentials in neurons arise from ionic currents across the cell membrane.
 
@@ -38,7 +38,7 @@ C \frac{dV}{dt} = - g_K n^4(V - V_k) - g_{Na} m^3h(V - V_{Na}) - g_L(V - V_L) + 
 \end{cases}
 $$
 
-3. Bienenstock-Cooper-Munro (BCM) model
+### 3. Bienenstock-Cooper-Munro (BCM) model
 
 A synaptic plasticity model explaining how neurons adjust connection strengths based on activity history to support learning and memory.
 
