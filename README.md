@@ -20,6 +20,7 @@ $$
 <div align="center">
   <figure>
     <img src="img/if.png" alt="if" width="500"/>
+    <br>
     <figcaption style="text-align:center;"><em>Figure 1. Example of IF model simulation output</em></figcaption>
   </figure>
 </div>
@@ -51,6 +52,7 @@ $$
 <div align="center">
   <figure>
     <img src="img/hh.png" alt="hh" width="500"/>
+    <br>
     <figcaption style="text-align:center;"><em>Figure 2. Example of HH model simulation output</em></figcaption>
   </figure>
 </div>
@@ -70,6 +72,7 @@ $$
 <div align="center">
   <figure>
     <img src="img/bcm.png" alt="bcm" width="500"/>
+    <br>
     <figcaption style="text-align:center;"><em>Figure 3. Example of BCM model simulations phase portrait and its fixed points</em></figcaption>
   </figure>
 </div>
