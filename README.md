@@ -73,7 +73,7 @@ $$
   <figure>
     <img src="img/bcm.png" alt="bcm" width="500"/>
     <br>
-    <figcaption style="text-align:center;"><em>Figure 3. Example of BCM model simulations phase portrait and its fixed points</em></figcaption>
+    <figcaption style="text-align:center;"><em>Figure 3. Example of BCM model simulation's phase portrait and its fixed points</em></figcaption>
   </figure>
 </div>
 
