@@ -1,4 +1,4 @@
-# Fundamental Neuroinformatics Models
+# Fundamental Computational Neuroscience Models
 
 *by Younginn Park*
 
