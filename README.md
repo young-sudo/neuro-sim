@@ -17,6 +17,13 @@ $$
 \end{cases}
 $$
 
+<div align="center">
+  <figure>
+    <img src="img/if.png" alt="if" width="500"/>
+    <figcaption style="text-align:center;"><em>Figure 1. Example of IF model simulation output</em></figcaption>
+  </figure>
+</div>
+
 ### 2. Hodgkin-Huxley (HH) model
 
 A biophysical model describing how action potentials in neurons arise from ionic currents across the cell membrane.
@@ -28,6 +35,9 @@ C \frac{dV}{dt} = - g_K n^4(V - V_k) - g_{Na} m^3h(V - V_{Na}) - g_L(V - V_L) + 
 \frac{dm}{dt} = \alpha_m (1 - m) - \beta_m m \\
 \frac{dh}{dt} = \alpha_h (1 - h) - \beta_h h \\
 \end{cases}
+$$
+
+$$
 \begin{cases}
 \alpha_n = \frac{0.1 (V + 55)}{1 - e^{-0.1 (V + 55)}} \\
 \beta_n = 0.125 e ^{-0.0125 (V + 65)} \\
@@ -37,6 +47,13 @@ C \frac{dV}{dt} = - g_K n^4(V - V_k) - g_{Na} m^3h(V - V_{Na}) - g_L(V - V_L) + 
 \beta_h = \frac{1}{1 + e^{-0.1 (V + 35)}} \\
 \end{cases}
 $$
+
+<div align="center">
+  <figure>
+    <img src="img/hh.png" alt="hh" width="500"/>
+    <figcaption style="text-align:center;"><em>Figure 2. Example of HH model simulation output</em></figcaption>
+  </figure>
+</div>
 
 ### 3. Bienenstock-Cooper-Munro (BCM) model
 
@@ -50,4 +67,11 @@ $$
 \end{cases}
 $$
 
-_(more details in each of the project folders)_
+<div align="center">
+  <figure>
+    <img src="img/bcm.png" alt="bcm" width="500"/>
+    <figcaption style="text-align:center;"><em>Figure 3. Example of BCM model simulations phase portrait and its fixed points</em></figcaption>
+  </figure>
+</div>
+
+_(more details about the models and the parameters in each of the project folders)_
