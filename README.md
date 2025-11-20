@@ -59,7 +59,7 @@ $$
 
 ### 3. Bienenstock-Cooper-Munro (BCM) model
 
-A synaptic plasticity model explaining how neurons adjust connection strengths based on activity history to support learning and memory.
+A synaptic plasticity model explaining how neurons adjust connection strengths based on activity history to support learning and memory. The fixed points represent stable or unstable synaptic states that determine whether a synapse weakens, remains unchanged, or strengthens over time.
 
 $$
 \begin{cases}
