@@ -10,7 +10,7 @@
 Sample simulations of selected fundamental **Computational Neuroscience** models, which form the theoretical foundation for understanding biological computation and provided the initial inspiration for artificial neural networks (ANNs).
 
 ## Contents
-### 1. Integrate-and-Fire (IF) model
+### 1. [Integrate-and-Fire (IF) model](https://github.com/young-sudo/neuro-sim/tree/2ec869934b392e88559a2f1cdce41c3c4b3d508c/if_model)
 
 A simplified neuron model that integrates incoming signals and generates spikes once a threshold potential is reached.
 
@@ -24,6 +24,7 @@ Definitions:
 - $\tau$ - membrane time constant of the neuron
 
 Equations:
+
 $$
 \begin{cases}
 \tau \frac{dV}{dt} = -(V - V_r) - w_E S_E(t) V - w_I S_I(t)(V-V_I) \\
@@ -44,7 +45,7 @@ Simplifications:
   </figure>
 </div>
 
-### 2. Hodgkin-Huxley (HH) model
+### 2. [Hodgkin-Huxley (HH) model](https://github.com/young-sudo/neuro-sim/tree/2ec869934b392e88559a2f1cdce41c3c4b3d508c/hh_model)
 
 A biophysical model describing how action potentials in neurons arise from ionic currents across the cell membrane.
 
@@ -58,6 +59,7 @@ Definitions:
 - $I_{app}$ - applied input current
 
 Equations:
+
 $$
 \begin{cases}
 C \frac{dV}{dt} = - g_K n^4(V - V_k) - g_{Na} m^3h(V - V_{Na}) - g_L(V - V_L) + I_{app} \\
@@ -87,7 +89,7 @@ $$
   </figure>
 </div>
 
-### 3. Bienenstock-Cooper-Munro (BCM) model
+### 3. [Bienenstock-Cooper-Munro (BCM) model](https://github.com/young-sudo/neuro-sim/tree/2ec869934b392e88559a2f1cdce41c3c4b3d508c/bcm_model)
 
 A synaptic plasticity model explaining how neurons adjust connection strengths based on activity history to support learning and memory. The fixed points represent stable or unstable synaptic states that determine whether a synapse weakens, remains unchanged, or strengthens over time.
 
