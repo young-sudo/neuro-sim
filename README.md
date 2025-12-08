@@ -14,6 +14,16 @@ Sample simulations of selected fundamental **Computational Neuroscience** models
 
 A simplified neuron model that integrates incoming signals and generates spikes once a threshold potential is reached.
 
+Integrate-and-fire neuron model with averaged excitatory ($_E$) and inhibitory ($_I$) inputs from chemical synapses. A simple model for neuronal activity (measured in membrane potential).
+
+Definitions:
+- $V$ - neuron activity/membrane potential ($V_r$ - resting potential)
+- $S$ - synaptic activation function ($0 \leq S_i(t) \leq 1$)
+- $w$ - weight for the synaptic activity
+- $f$ - firing rate (opening rate of the receptor channel)
+- $\tau$ - membrane time constant of the neuron
+
+Equations:
 $$
 \begin{cases}
 \tau \frac{dV}{dt} = -(V - V_r) - w_E S_E(t) V - w_I S_I(t)(V-V_I) \\
@@ -22,7 +32,11 @@ $$
 \end{cases}
 $$
 
-<div align="center">
+Simplifications:
+- $f = f_E = f_I$
+- $V_E=0$, 'reversal potential' - membrane potential at which the direction of current changes from positive to negative
+
+<div align="center" style="margin-top: 50px; margin-bottom: 50px;">
   <figure>
     <img src="https://raw.githubusercontent.com/young-sudo/neuro-sim/main/img/if.png" alt="if" width="500"/>
     <br>
@@ -34,6 +48,16 @@ $$
 
 A biophysical model describing how action potentials in neurons arise from ionic currents across the cell membrane.
 
+Definitions:
+- $V$ - membrane potential (voltage)
+- $C$ - electric capacitance ($1\mu F/cm^2)$
+- $g_{K}$, $g_{Na}$, $g_{L}$ - maximum conductance of ions ($K^+, Na^+$ and the rest, respectively) - in reality it varies through time (via e.g. chemical changes), but this simulation will be simplified and the value will be set to constant, let $g_K = 30 ms/cm^2$, $g_{Na} = 120 ms/cm^2$, $g_L = 0.1 ms/cm^2$
+- $V_{K}$, $V_{Na}$, $V_{L}$ - reversal potential of ions ($K^+, Na^+$ and the rest, respectively), varies in time in reality, but practically constant, let $V_K = -80 mV$, $V_{Na} = 50 mV$, $V_L = -65 mV$
+- $n, m, h$ - gating variables, they are dependent on time and voltage (membrane potential), they have values $0 \leq n,m,h \leq 1$
+- $\alpha, \beta$ - coefficients that depend on voltage (membrane potential), for each of the gating variables
+- $I_{app}$ - applied input current
+
+Equations:
 $$
 \begin{cases}
 C \frac{dV}{dt} = - g_K n^4(V - V_k) - g_{Na} m^3h(V - V_{Na}) - g_L(V - V_L) + I_{app} \\
@@ -41,9 +65,6 @@ C \frac{dV}{dt} = - g_K n^4(V - V_k) - g_{Na} m^3h(V - V_{Na}) - g_L(V - V_L) + 
 \frac{dm}{dt} = \alpha_m (1 - m) - \beta_m m \\
 \frac{dh}{dt} = \alpha_h (1 - h) - \beta_h h \\
 \end{cases}
-$$
-
-$$
 \begin{cases}
 \alpha_n = \frac{0.1 (V + 55)}{1 - e^{-0.1 (V + 55)}} \\
 \beta_n = 0.125 e ^{-0.0125 (V + 65)} \\
@@ -54,17 +75,33 @@ $$
 \end{cases}
 $$
 
-<div align="center">
+<div align="center" style="margin-top: 50px; margin-bottom: 50px;">
   <figure>
     <img src="https://raw.githubusercontent.com/young-sudo/neuro-sim/main/img/hh.png" alt="hh" width="500"/>
     <br>
-    <figcaption style="text-align:center;"><em>Figure 2. Example of HH model simulation output with a constant input current</em></figcaption>
+    <img src="https://raw.githubusercontent.com/young-sudo/neuro-sim/main/img/random_spike.png" alt="spike" width="500"/>
+    <br>
+    <img src="https://raw.githubusercontent.com/young-sudo/neuro-sim/main/img/random_noise.png" alt="noise" width="500"/>
+    <br>
+    <figcaption style="text-align:center;"><em>Figure 2. Example of HH model simulation output with a constant input current, random spike train input, and random noise input</em></figcaption>
   </figure>
 </div>
 
 ### 3. Bienenstock-Cooper-Munro (BCM) model
 
 A synaptic plasticity model explaining how neurons adjust connection strengths based on activity history to support learning and memory. The fixed points represent stable or unstable synaptic states that determine whether a synapse weakens, remains unchanged, or strengthens over time.
+
+Definitions:
+- $f$ - firing rate of the presynaptic neuron (here, simplified: fixed)
+- $r$ - firing rate of the postsynaptic neuron
+- $w$ - synaptic weights
+- $\theta$ - sliding threshold
+- $\tau_w, \tau_\theta, \tau_r$ - time constants for weights, sliding threshold and firing rate of the postsynaptic neuron, respectively
+- Constants:
+    - $\epsilon$ - time constant of uniform decay (small value)
+    - $\lambda$ - scaling constant for the change of weights (learning rate)
+    - $\alpha$ - sensitivity constant (how sliding threshold is sensitive to firing rate)
+    - $\beta$ - scaling constant for the efficacy of the presynaptic neuron on the postsynaptic neuron
 
 $$
 \begin{cases}
@@ -74,7 +111,7 @@ $$
 \end{cases}
 $$
 
-<div align="center">
+<div align="center" style="margin-top: 50px; margin-bottom: 50px;">
   <figure>
     <img src="https://raw.githubusercontent.com/young-sudo/neuro-sim/main/img/bcm.png" alt="bcm" width="500"/>
     <br>
@@ -82,8 +119,6 @@ $$
   </figure>
 </div>
 
-<br>
-<br>
 <br>
 
 _More details about the models and the parameters in each of the project folders_
